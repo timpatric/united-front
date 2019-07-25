@@ -1,0 +1,21 @@
+# * * * * * mkdir >> Desktop/cronfoldaAUTO1
+
+# * * * * * echo 'Hello world' >> Desktop/test1/cronTxt.txt
+
+# 0 12 * 5-8 * >> chrome
+
+# 30 MON-FRI 9AM-5Pm
+# 30 9-17 MON-FRI * * firefox
+
+# Empty Desktop/test1 folder every Friday at 5pm
+# 0 5 * * rm -rf Desktop/test1
+
+# Backup images to google drive every night at midnight
+# 0 0 * * * rsync -a ~/Pictures/ ~/Google\ Drive/Pictures/
+
+# Auto update of the member list file on server by client every midnight.
+
+#* * * * * terminator
+#* * * * * ./server 8000
+#* * * * * terminator
+#* * * * * ./client 127.0.0.1 8000
