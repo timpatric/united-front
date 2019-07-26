@@ -6,24 +6,27 @@
   <div class="box">
     <div class="box-header">
       <div class="row">
-        <div class="col-sm-8">
-          <h3 class="box-title">List of party agents</h3>
-        </div>
         <div class="col-sm-4">
-          <a class="btn btn-primary" href="{{ route('agent-management.create') }}">Add new agent</a>
+          <h3 class="box-title">List of party agents</h3>
         </div>
       </div>
     </div>
   <!-- /.box-header -->
    <div class="box-body">
-      <form method="POST" action="{{ route('agent-management.search') }}">
-         {{ csrf_field() }}
-         @component('layouts.search', ['title' => 'Search'])
-          @component('layouts.two-cols-search-row', ['items' => ['Agent Name', 'District'], 
-          'oldVals' => [isset($searchingVals) ? $searchingVals['agent_name'] : '', isset($searchingVals) ? $searchingVals['district_name'] : '']])
-          @endcomponent
-        @endcomponent
+    <div class="col-md-4" style="margin-bottom: 30px">
+      <form method="get" action="{{ route('agent-management.index') }}">
+        <div class="form-group">
+          <input type="search" name="search" class="form-control" required>
+        </div>
+        <span class="input-group-prepend">
+          <button type="submit" class="btn btn-primary">Search
+          </button>
+        </span>
       </form>
+    </div>
+            <div class="col-sm-4">
+          <a style ="float: right"class="btn btn-primary" href="{{ route('agent-management.create') }}">Add new agent</a>
+        </div>
       <br />
       <table class="table table-bordered table-stripped">
             <tr>

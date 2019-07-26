@@ -27,10 +27,9 @@ class DistrictManagementController extends Controller
     public function index()
     {
         //
-        $districts = District::All()->toArray();
-        $members = DB::table('members')->pluck('member_name');
+        // $districts = District::All()->toArray();
 
-        return view('district_mgt/index', compact('districts','members'));
+        return view('district_mgt/index');
     }
 
     /**
@@ -55,7 +54,7 @@ class DistrictManagementController extends Controller
         //
 
             $district = new District([
-              'name'           =>   $request->get('name'),
+              'district_name'           =>   $request->get('district_name'),
               'district_code'  =>   $request->get('district_code'),
         ]);
             $district->save();
@@ -95,12 +94,14 @@ class DistrictManagementController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-
-    }
+     public function search(Request $request)
+     {
+        $search = $request->get('search');
+        $district = DB::table('districts')->where('district_name','like','%'.$search.'%');
+        return view('district_mgt/index',['districts'=>$districts]);
+     }
     /**
-     * Remove the specified resource from storage.
+     * Search the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -109,10 +110,5 @@ class DistrictManagementController extends Controller
     {
         //
        }
-    public function search(Request $request) {
-
-        
- 
-    }
 
 }

@@ -10,29 +10,18 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('district-management.store') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">District</label>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">District</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
+                                <input id="district_name" type="text" class="form-control" name="district_name" value="" required autofocus>
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('district_code') ? ' has-error' : '' }}">
-                            <label for="district_code" class="col-md-4 control-label">District Code</label>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">District Code</label>
 
                             <div class="col-md-6">
-                                <input id="district_code" type="text" class="form-control" name="district_code" value="{{ old('district_code') }}" required>
-                                @if ($errors->has('district_code'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('district_code') }}</strong>
-                                    </span>
-                                @endif
+                                <input id="district_code" type="text" class="form-control" name="district_code" value="" required>
                             </div>
                         </div>
                         <div class="form-group">

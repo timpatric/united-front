@@ -43,8 +43,8 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Agents</div>
-                      <div style="font-size:30px">
-                        34
+                      <div style="font-size:20px;font-style: italic;">
+                        {{$agentno}}
                       </div>
                     </div>
                     <div class="col-auto">
@@ -60,8 +60,8 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Memebers</div>
-                      <div style="font-size:30px"">
-                        34
+                      <div style="font-size:20px;font-style: italic;">
+                        {{$memberno}}
                       </div>
                     </div>
                     <div class="col-auto">
@@ -78,11 +78,11 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Districts</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Pending Upgrades</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div style="font-size:30px"">
-                            56
+                          <div style="font-size:20px;font-style: italic;">
+                            {{$member_upgrade}}
                           </div>
                         </div>
                       </div>
@@ -100,8 +100,9 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Funds</div>
-                      <div style="font-size:30px"">
-                        450000
+                      <div style="font-size:20px;font-style: italic;">
+                        2389000
+                        
                       </div>
                     </div>
                     <div class="col-auto">

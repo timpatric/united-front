@@ -27,17 +27,25 @@ class DashboardController extends Controller
      */
     public function index()
     { 
-
         // counts All party members
          $memberno = DB::table('members')->count();
 
         // counts All party agents in the all country
-        $agentno = DB::table('agents')->count(); 
+        $agentno = DB::table('agents')->count();
 
-        //districts the party operates
-        $districtno = DB::table('districts')->count();
+        //total amount of money in the treasury after a month
+        // $total_fund = DB::table('funds')->count(); 
+
+        // $district =DB::select(DB::raw('SELECT count(id) as nums from districts where id NOT IN (SELECT district_Id from agents)'));
          
-        return view('dashboard',['memberno'=>$memberno,'agentno'=>$agentno,'districtno'=>$districtno]);
-        
+        //members qualified to be upgraded to agents
+        $member =DB::select(DB::raw('SELECT  DISTINCT rec_name
+        FROM members WHERE rec_name IN
+          (SELECT rec_name FROM members GROUP BY rec_name HAVING COUNT(*) >=40)'));
+          $member_upgrade=count($member);
+          ;
+        //send data to the views
+        return view('dashboard',['memberno'=>$memberno,'agentno'=>$agentno,'member_upgrade'=>$member_upgrade]);
+
     }
 }

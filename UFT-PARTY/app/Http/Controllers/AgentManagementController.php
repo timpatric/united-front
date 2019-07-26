@@ -21,7 +21,7 @@ class AgentManagementController extends Controller
     public function index()
     {
         $agents = DB::select('select * from agents');
-return view('agent_mgt/index',['agents'=>$agents]);
+        return view('agent_mgt/index',['agents'=>$agents]);
     }
 
     /**
@@ -60,19 +60,6 @@ return view('agent_mgt/index',['agents'=>$agents]);
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $agents = DB::select('select * from agents where agent_id = ?',[$id]);
-return view('agent_mgt/edit',['agents'=>$agents]);
-
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -106,4 +93,20 @@ return view('agent_mgt/edit',['agents'=>$agents]);
             DB::delete('delete from agents where agent_id = ?',[$agent_id]);
          return redirect()->route('agent-management.index')->with('success','Agent removed successfully');
      }
+     public function search(Request $request)
+     {
+        $search = $request->get('search');
+        $agents = DB::table('agents')->where('agent_name','like','%'.$search.'%')
+                                     ->get();
+        if($agent!='')
+        {
+            return view('agent_mgt/index',['agents'=>$agents]);
+
+        }
+        else
+        {
+           return redirect()->route('agent-management.index')->with('success','No record was found');
+     } 
+        }
+
 }

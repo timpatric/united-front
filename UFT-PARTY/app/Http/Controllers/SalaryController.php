@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SalaryController extends Controller
 {
@@ -25,4 +26,10 @@ class SalaryController extends Controller
     {
         return view('salary_mgt/index');
     }
+    public function search(Request $request)
+     {
+        $search = $request->get('search');
+        $salaries = DB::table('salaries')->where('agent_name','like','%'.$search.'%');
+        return view('salary_mgt/index',['salaries'=>$salaries]);
+     }
 }

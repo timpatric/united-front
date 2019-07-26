@@ -13,18 +13,17 @@
   </div>
   <!-- /.box-header -->
   <div class="box-body">
-      <div class="row">
-        <div class="col-sm-6"></div>
-        <div class="col-sm-6"></div>
-      </div>
-      <form method="POST" action="{{ route('member-management.search') }}">
-         {{ csrf_field() }}
-         @component('layouts.search', ['title' => 'Search'])
-          @component('layouts.two-cols-search-row', ['items' => ['Member Name', 'Member Id'], 
-          'oldVals' => [isset($searchingVals) ? $searchingVals['member_name'] : '', isset($searchingVals) ? $searchingVals['member_id'] : '']])
-          @endcomponent
-        @endcomponent
+    <div class="col-md-4" style="margin-bottom: 30px">
+      <form method="get" action="{{ route('member-management.index') }}">
+        <div class="form-group">
+          <input type="search" name="search" class="form-control" required>
+        </div>
+        <span class="input-group-prepend">
+          <button type="submit" class="btn btn-primary">Search
+          </button>
+        </span>
       </form>
+    </div>
       <br />
       <table class="table table-bordered table-stripped">
             <tr>

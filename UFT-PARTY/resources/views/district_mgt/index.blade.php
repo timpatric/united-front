@@ -20,30 +20,30 @@
         <div class="col-sm-6"></div>
         <div class="col-sm-6"></div>
       </div>
-      <form method="POST" action="{{ route('district-management.search') }}">
-         {{ csrf_field() }}
-        @component('layouts.search', ['title' => 'Search'])
-          @component('layouts.two-cols-search-row', ['items' => ['District Name'], 
-          'oldVals' => [isset($searchingVals) ? $searchingVals['district_name']: '']])
-          @endcomponent
-        @endcomponent
+          <div class="col-md-4" style="margin-bottom: 30px">
+      <form method="get" action="{{ route('district-management.index') }}">
+        <div class="form-group">
+          <input type="search" name="search" class="form-control" required>
+        </div>
+        <span class="input-group-prepend">
+          <button type="submit" class="btn btn-primary">Search
+          </button>
+        </span>
       </form>
+    </div>
       <br />
          <table class="table table-bordered table-stripped">
             <tr>
                 <th>District Code</th>
                 <th>District Name</th>
-                <th>Number of members</th>
+                <th>Total number of members</th>
+                
             </tr>
-            @foreach ($districts as $district)
                 <tr>
-                  <td>{{ $district['district_code']}}</td>
-                  <td>{{ $district['name']}}</td>
-            @foreach
-            @foreach ($members as $member)
-                  <td>{{ $member['member_name']}}</td>
+                  <td>3</td>
+                  <td>33</td>
+                  <td>3</td>
                 </tr>
-            @endforeach
          </table>
     </div>
   </div>

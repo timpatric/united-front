@@ -4,10 +4,10 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        District Mangement
+        District Management
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> District Mangement</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> District Management</a></li>
         <li class="active">District</li>
       </ol>
     </section>

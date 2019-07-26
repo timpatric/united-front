@@ -10,29 +10,18 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('treasury-management.store') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('fund_source') ? ' has-error' : '' }}">
-                            <label for="fund_source" class="col-md-4 control-label">Fund Source</label>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Fund Source</label>
 
                             <div class="col-md-6">
-                                <input id="fund_source" type="text" class="form-control" name="fund_source" value="{{ old('fund_source') }}" required autofocus>
-
-                                @if ($errors->has('fund_source'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('fund_source') }}</strong>
-                                    </span>
-                                @endif
+                                <input id="fund_source" type="text" class="form-control" name="fund_source" value="" required autofocus>
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('amount') ? ' has-error' : '' }}">
-                            <label for="amount" class="col-md-4 control-label">Amount</label>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Amount</label>
 
                             <div class="col-md-6">
-                                <input id="amount" type="text" class="form-control" name="amount" value="{{ old('amount') }}" required>
-                                @if ($errors->has('amount'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('amount') }}</strong>
-                                    </span>
-                                @endif
+                                <input id="amount" type="text" class="form-control" name="amount" value="" required>
                             </div>
                         </div>
                          <div class="form-group">
@@ -42,7 +31,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-                                    <input type="text" value="{{ old('reg_date') }}" name="reg_date" class="form-control pull-right" id="regDate" required>
+                                    <input type="text" value="" name="reg_date" class="form-control pull-right" id="regDate" required>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +42,7 @@
                                  </button>
                                  <button type="submit" class="btn btn-danger">
                                      <a style="color:white"href="{{ route('treasury-management.index') }}">Back</a>
-                                </button>
+                                 </button>
                             </div>
                         </div>                          
                     </form>
