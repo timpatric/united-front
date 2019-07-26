@@ -1,0 +1,22 @@
+Details of members.
+
+Member 1
+
+name of the member:              Tom Sons
+ID of new member:                2
+date of enrollment:              1/7/2019
+Recommended by another member?   N
+
+Member 2
+
+name of the member: 			 Jane Doe
+ID of new member:       		 2
+date of enrollment:   			 2/7/2019
+Recommended by another member?   Y
+
+Member 3
+
+name of the member:   			 Emma Duncan
+ID of new member:       		 3
+date of enrollment:    			 2/7/2019
+Recommended by another member?   N
