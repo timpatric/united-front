@@ -35,6 +35,7 @@
         <li><a href="{{ url('member-management') }}"><i class="fa fa-link"></i> <span>Members</span></a></li>
         <li><a href="{{ url('treasury-management') }}"><i class="fa fa-link"></i> <span>Treasury</span></a></li>
         <li><a href="{{ url('salary-management') }}"><i class="fa fa-link"></i> <span>Salary</span></a></li>
+        <li><a href="{{url('hierachy')}}"><i class="fa fa-link"></i> <span>Hierachy</span></a></li>
       </ul>
     </div>
     </section>

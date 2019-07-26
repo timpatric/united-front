@@ -9,10 +9,10 @@
         <div class="col-sm-8">
           <h3 class="box-title">Fund Details</h3>
         </div>
-        <div class="col-sm-4">
+    </div><br>
+        <div class="col-sm-4" style="float:right">
           <a class="btn btn-primary" href="{{ route('treasury-management.create') }}">Register new fund </a>
         </div>
-    </div>
   </div>
   <!-- /.box-header -->
   <div class="box-body">
@@ -20,15 +20,19 @@
         <div class="col-sm-6"></div>
         <div class="col-sm-6"></div>
       </div>
-      <form method="POST" action="{{ route('treasury-management.search') }}">
-         {{ csrf_field() }}
-         <table class="table table-bordered table-stripped">
-          <tr>
-           <b>Monthly fund totals:</b><td>Amount received per month</td>
-          </tr>
-         </table>
-         <a class="btn btn-primary" href="{{ route('treasury-management.create') }}">Distribute </a>
-       </form>
+     <div class="col-md-4" style="margin-bottom: 30px">
+      <h style="font-size:20px"><b>Monthly Totals</b></h1>
+      <form method="get" action="{{ route('salary-management.index') }}">
+        {{ csrf_field() }}
+        <div class="form-group">
+          <input type="search" name="search" class="form-control" value="30000">
+        </div>
+        <span class="input-group-prepend">
+          <button type="submit" class="btn btn-primary">Distribute
+          </button>
+        </span>
+      </form>
+    </div>
       <br />
       <table class="table table-bordered table-stripped">
             <tr>

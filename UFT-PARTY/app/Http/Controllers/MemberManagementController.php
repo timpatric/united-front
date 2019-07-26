@@ -76,11 +76,12 @@ class MemberManagementController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-         $members = DB::select('select * from members where id = ?',[$id]);
-        return view('member_mgt/edit',['members'=>$members]);
-    }
+     public function search(Request $request)
+     {
+        $search = $request->get('search');
+        $members = DB::table('members')->where('member_name','like','%'.$search.'%');
+        return view('member_mgt/index',['members'=>$members]);
+     }
 
     public function destroy($id)
     {
